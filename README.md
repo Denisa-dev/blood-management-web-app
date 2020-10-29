@@ -6,7 +6,7 @@ the web application, dedicated to blood transfusion centers, has as main role th
 
 <figure>
   <figcaption><strong>Fig.1 - Authentication Page.</strong></figcaption>
-  <img src="images/auth.jpg" width="880" height="420" alt="Authentication Page of the application">  
+  <img src="images/auth.jpg" width="780" height="420" alt="Authentication Page of the application">  
 </figure>
 
 The application was developed using JavaScript, HTML5 and CSS3. 
