@@ -1,0 +1,471 @@
+.back-section {
+    /*background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(112, 9, 45, 1) 46%, rgba(112, 9, 45, 1) 100%);*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+bg-section {
+    width: 100%;
+    padding: 0 7%;
+    display: table;
+    margin: 0;
+    max-width: 100%;
+
+    background-image: url('D:/LICENTA/WebApp/images/free.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+button-btn {
+    background-color: #b95757; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+  
+.button1-btn {
+    background-color: white; 
+    color: white; 
+    border: 2px solid #b95757;
+}
+  
+.button1-btn:hover {
+    background-color: #b95757;
+    color: white;
+}
+
+
+button-btn-e {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;  
+    outline:none !important;     
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+  
+.button1-btn-e {
+    background-color: white; 
+    color: white; 
+    border: 2px solid #b95757;
+    outline:none !important;  
+}
+  
+.button1-btn-e:hover {
+    background-color: #b95757;
+    color: white;
+}
+
+* {box-sizing: border-box}
+
+
+.btn-group {
+    background-color: #ff3c3c; /* Green background */
+    border: 1px solid #ff3c3c;/* Green border */
+    color: white; /* White text */
+    cursor: pointer; /* Pointer/hand icon */
+    width: 100%; /* Set a width if needed */
+    height: 7%;   
+    margin-bottom: 30px;
+    float: right;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    flex-direction: column;
+  }
+  
+  .btn-group :not(:last-child) {
+    border-bottom: none; /* Prevent double borders */
+  }
+  
+  /* Add a background color on hover */
+  .btn-group :hover {
+    background-color: #ff2929;
+    color: white;
+  }
+
+
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 566px;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent-em {
+  color: white;
+  font-size: 150px;
+  display: none;
+  width: 100%;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Home {background-image: url('D:/LICENTA/WebApp/images/free.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: rgba(255,255,255,0.5); 
+    background-size: cover;}
+#News {background-color: green;}
+#Contact {background-image: url('D:/LICENTA/WebApp/images/orizont.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: rgba(255,255,255,0.5); 
+    background-size: cover;}
+#About {background-image:url('D:/LICENTA/WebApp/images/leaf.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;}
+
+#Add {background-image:url('D:/LICENTA/WebApp/images/management.jpg');
+     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;}
+#Info {background-image:url('D:/LICENTA/WebApp/images/hospital.jpg');
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+    background-size: cover;}
+
+.large-div {
+    width: 1700px;
+    height: 850px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+div.transbox {
+    margin: 30px;
+    background-color: #ffffff;
+    border: 1px solid transparent;
+    opacity: 1;
+    height: 95%;
+    width: 60%;
+    margin-left: 20%;
+  }
+  
+  div.transbox p {
+    margin: 4%;
+    font-weight: bold;
+    color: #000000;
+  }
+
+.div1 {
+    display: inline-block;
+}
+
+.div2 {
+    display: inline-block;
+}
+
+.form-style-1:not(.datepicker) {
+	margin:10px auto;
+    max-width: 500px;
+    opacity: 1;
+    max-height: 330px;
+	padding: 20px 12px 10px 0px;
+	font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+.form-style-1 li:not(.datepicker) {
+	padding: 0;
+    display: block;
+    opacity: 1;
+    max-height: 500px;
+	list-style: none;
+	margin: 10px 0 0 0;
+}
+.form-style-1 label{
+	margin:0 0 3px 0;
+    padding:0px;
+    opacity: 1;
+    max-height: 500px;
+	display:block;
+	font-weight: bold;
+}
+.form-style-1 input[type=text]:not(.datepicker), 
+.form-style-1 input[type=date],
+.form-style-1 input[type=datetime],
+.form-style-1 input[type=number],
+.form-style-1 input[type=search],
+.form-style-1 input[type=time],
+.form-style-1 input[type=url],
+.form-style-1 input[type=email],
+textarea, 
+select{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border:1px solid #BEBEBE;
+	padding: 7px;
+	margin:0px; 
+	outline: none;	
+}
+.form-style-1 input[type=text]:focus, 
+.form-style-1 input[type=date]:focus,
+.form-style-1 input[type=datetime]:focus,
+.form-style-1 input[type=number]:focus,
+.form-style-1 input[type=search]:focus,
+.form-style-1 input[type=time]:focus,
+.form-style-1 input[type=url]:focus,
+.form-style-1 input[type=email]:focus,
+.form-style-1 textarea:focus, 
+.form-style-1 select:focus{
+	-moz-box-shadow: 0 0 8px #88D5E9;
+	-webkit-box-shadow: 0 0 8px #88D5E9;
+	box-shadow: 0 0 8px #88D5E9;
+	border: 1px solid #88D5E9;
+}
+.form-style-1 .field-divided{
+    opacity: 1;
+	width: 100%;
+}
+
+.label-tag{
+    font-size: 20px;
+    color: #000000;
+}
+
+.form-style-1 .field-long{
+    opacity: 1;
+    font-size: 20px;
+    height: 45px;
+	width: 100%;
+}
+.form-style-1 .field-select{
+    opacity: 1;
+    height: 50px;
+	width: 500px;
+}
+.form-style-1 .field-textarea{
+    opacity: 1;
+    height: 120px;
+	width: 500px;
+}
+.form-style-1 input[type=submit], .form-style-1 input[type=button]{
+	background: #4B99AD;
+	padding: 8px 15px 8px 15px;
+    border: none;
+    opacity: 1;
+	color: #fff;
+}
+.form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover{
+	background: #4691A4;
+    box-shadow:none;
+    opacity: 1;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+}
+.form-style-1 .required{
+    color:red;
+    opacity: 1;
+}
+
+.card-em {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    height: 700px;
+    background-color: white;
+    width: 750px;
+    position: relative;
+    margin-left: 430px;
+    margin-top: 0px;
+    transition: 0.5s;
+}
+
+.container-em {
+    display: table;
+    font-size: 70px;
+    color: white;
+    width: 100%;
+    height: 350px;
+}
+
+.modal-content-em {
+    background-color: #fefefe;
+    margin: 4% auto 15% auto;
+    /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid rgb(224, 150, 172);
+    width: 90%;
+    height: 65%;
+    /* Could be more or less, depending on screen size */
+}
+
+.card-em-em {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    height: 700px;
+    background-color: white;
+    width: 900px;
+    position: relative;
+    margin-left: 390px;
+    transition: 0.5s;
+}
+
+.container-em-em {
+    display: table;
+    font-size: 70px;
+    color: white;
+    width: 100%;
+    height: 730px;
+}
+
+.modal-content-em-em {
+    background-color: #fefefe;
+    margin: 0% auto 0% auto;
+    /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid rgb(59, 142, 109);
+    width: 85%;
+    height: 58%;
+    /* Could be more or less, depending on screen size */
+}
+
+.animate-em {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+.floated {
+    float:left;
+    margin-right:5px;
+ }
+
+  input[type=text]:not(.datepicker), select, textarea {
+    width: 500px;
+    height: 50px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+  }
+  
+  label-em-em {
+    padding: 0px 0px 0px 0;
+    display: inline-block;
+    color: #000000;
+  }
+  
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  .container-em-second {
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    height: 528px;
+    margin-top: 1px;
+    width: 100%;
+  }
+  
+  .col-25 {
+    width: 25%;
+  }
+  
+  .col-75 {
+    width: 75%;
+  }
+
+  .row {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+  button-btn-em {
+    background-color: #57b99d; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    outline:none !important; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+  
+.button1-btn-em {
+    background-color: white; 
+    color: white; 
+    border: 2px solid #57b99d;
+    outline:none !important; 
+}
+  
+.button1-btn-em:hover {
+    background-color: #57b99d;
+    color: white;
+}

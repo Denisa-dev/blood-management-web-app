@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Pagina Principală</title>
+
+    <!-- <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/timetable.css"> -->
+    <!--  <script src='dist/Chart.min.js'></script>
+    <script src='dist/Chart.js'></script>
+    <script type="text/javascript" src="http://www.chartjs.org/assets/Chart.js">
+    </script>-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-storage.js"></script>
+
+
+    <link href="css/update.css" rel="stylesheet" id="bootstrap-css">
+    <link href="css/graph.css" rel="stylesheet">
+    <link href="css/cases.css" rel="stylesheet">
+    <link href="css/management.css" rel="stylesheet">
+
+    <!--  <script>
+        createEvent();
+    </script> -->
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="js/graphs.js"></script>
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href='https://fonts.googleapis.com/css?family=Michroma' rel='stylesheet'>
+    <link href="css/resume.min.css" rel="stylesheet">
+    <link href="css/booking.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/calendar.css" rel="stylesheet">
+    <link href="css/popmessage.css" rel="stylesheet">
+    <link href="css/emergency.css" rel="stylesheet">
+    <link href="css/info.css" rel="stylesheet">
+    <link href="css/logout.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <span class="d-block d-lg-none">Denisa Rosu</span>
+            <span class="d-none d-lg-block">
+                <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="images/bg-profile.png" alt="">
+            </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#about">Despre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#programs">Programări</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#interests">Urgențe</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#statistic" onclick="loadPolarArea()">Statistici</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#infos">Informații Centru</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#logout" onclick="logoutHere()">Ieșire</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid p-0">
+        <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+            <div class="left-half">
+                <div class="w-100">
+                    <h1 class="mb-0"> <span id="nume-centru"></span> <br><span id="numeCentru"
+                            class="text-primary"></span>
+                    </h1>
+                    <div style="margin-top: 3%; font-size: 25px;" class="subheading mb-5">
+                        <p style="color: black" id="adresaData"></p>
+                        <a href="mailto:name@email.com" id="emailCentru"></a>
+                    </div>
+                    <p class="text">Donate your Love <br> Save Lives
+                    </p>
+                </div>
+            </div>
+            <div class="right-half"></div>
+        </section>
+
+        <hr class="m-0">
+        <section class="resume-section p-3 justify-content-center" id="programs">
+            <div class="w-100">
+                <h2 class="mb-5">Programări</h2>
+                <div class="month">
+                    <ul>
+                        <li>
+                            <p style="font-size: 19px; margin-bottom: 0%">Alegeți data:</p>
+                            <input style="font-size: 20px; cursor: pointer;" width="50px;" height="1" class="datepicker"
+                                type="text" id="datepicker">
+                        </li>
+                    </ul>
+                </div>
+                <div class="div2">
+                    <div style="float: left;">
+                        <div class="subheading mb-3">
+                            <div class="containerTime" id="slotTime">
+                                <div class="timings" id="slots">
+                                    <div style="margin-bottom:60%;"> <span style=" font-size: 30px;"> 8:00 </span> AM
+                                    </div>
+                                    <div style=" font-size: 15px;"> 8:30 </div>
+                                    <div style="margin-bottom:65%"> <span style=" font-size: 30px;"> 8:30 </span>AM
+                                    </div>
+                                    <div style=" font-size: 15px;"> 9:00 </div>
+                                    <div style="margin-bottom:63%"> <span style=" font-size: 30px;"> 9:00 </span>AM
+                                    </div>
+                                    <div style=" font-size: 15px;"> 9:30 </div>
+                                    <div style="margin-bottom:63%"> <span style=" font-size: 30px;"> 9:30 </span>AM
+                                    </div>
+                                    <div style=" font-size: 15px;"> 10:00 </div>
+                                    <div style="margin-bottom:63%"> <span style=" font-size: 30px;"> 10:00 </span>AM
+                                    </div>
+                                    <div style=" font-size: 15px;"> 10:30 </div>
+                                    <div style="margin-bottom:63%"> <span style=" font-size: 30px;"> 10:30 </span>AM
+                                    </div>
+                                    <div style=" font-size: 15px;"> 11:00 </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float: right;">
+                        <div class="subheading mb-3">
+                            <div class="containerTime" id="slotTime2">
+                                <div class="timings" id="slots2">
+                                    <div style="margin-bottom:60%;"> <span style=" font-size: 30px;"> 11:00 </span> AM
+                                    </div>
+                                    <div style=" font-size: 15px;"> 11:30 </div>
+                                    <div style="margin-bottom:65%"> <span style=" font-size: 30px;"> 11:30 </span>AM
+                                    </div>
+                                    <div style=" font-size: 15px;"> 12:00 </div>
+                                    <div style="margin-bottom:63%"> <span style=" font-size: 30px;"> 12:00 </span>AM
+                                    </div>
+                                    <div style=" font-size: 15px;"> 12:30 </div>
+                                    <div style="margin-bottom:63%"> <span style=" font-size: 30px;"> 12:30 </span>AM
+                                    </div>
+                                    <div style=" font-size: 15px;"> 13:00 </div>
+                                    <div style="margin-bottom:63%"> <span style=" font-size: 30px;"> 13:00 </span>AM
+                                    </div>
+                                    <div style=" font-size: 15px;"> 13:30 </div>
+                                    <div style="margin-bottom:63%"> <span style=" font-size: 30px;"> 13:30 </span>AM
+                                    </div>
+                                    <div style=" font-size: 15px;"> 14:00 </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-100 div1">
+                        <div class="large">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="m-0">
+
+        <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="interests">
+            <div class="w-100">
+                <h2 class="mb-5">Urgențe și Cazuri</h2>
+                <div class="large-div">
+                    <button style="font-size: 23px;outline-color: #ff3c3c;" class="tablink"
+                        onclick="openPage('Home', this, '#ff3c3c')" id="defaultOpenTab">Urgențe</button>
+                    <button style="font-size: 23px;outline-color: rgb(0, 204, 102)" class="tablink"
+                        onclick="openPage('About', this, 'rgb(0, 204, 102)')">Cazuri Reușite</button>
+                    <button style="font-size: 23px;outline-color: rgb(255, 204, 102)" class="tablink"
+                        onclick="openPage('Contact', this, 'rgb(255, 204, 102)')">Cazuri Speciale</button>
+
+                    <div id="Home" class="tabcontent-em">
+                        <div class="content-special-urg" id="emergencyInfos">
+                            <div class="row">
+                                <button type="button" class="btn btn-hover-em" onclick="backEmergency()"
+                                    style="color: #ff3c3c; font-size: 25px;margin-left: 30px; margin-top: 20px;">Adaugă
+                                    urgențe</button>
+                                <h3 style="margin-top: 20px; margin-left: 28%;">Tabelă Urgențe</h3>
+                            </div>
+                            <div style="height:600px;overflow:auto; width: 100%;">
+                                <table class="content-table-urg" id="myTable-urg"
+                                    style="font-size: 22px;margin-left: 30px;">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align:center">Titlu urgență</th>
+                                            <th style="text-align:center">Grupa de sânge</th>
+                                            <th style="text-align: center"> Descriere </th>
+                                            <th style=" text-align:center">Editează</th>
+                                            <th style="text-align:center">Șterge</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="table-body-urg">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div style="position: absolute;
+                        z-index: 2;" class="card-em" id="form-emergency">
+                            <div id="cardContent-em" class="container-em">
+                                <div class="btn-group">
+                                    <button type="button" class="btn" onclick="loadEmergencies()"
+                                        style="color: white; font-size: 25px;">Vizualizează
+                                        urgențe</button>
+                                </div>
+                                <h3 style=" text-align: center; text-transform: initial; margin-top: 30px">Vă rugăm
+                                    introduceți informații
+                                    corecte pentru a
+                                    păstra autenticitatea datelor.<br>
+                                    Vă mulțumim!</h3>
+                                <div class="modal-content-em animate-em">
+                                    <div class="container-em">
+                                        <form style="margin-bottom: 0px;">
+                                            <ul class="form-style-1">
+                                                <label class="label-tag">Titlu urgență</label>
+                                                <input type="text" style="font-size: 18px;" id="titlu"
+                                                    class="field-long" maxlength="49" required />
+                                                </li>
+                                                <li>
+                                                    <label style="margin-top: 15px;" class="label-tag">Grupa de
+                                                        sânge</label>
+                                                    <select style="font-size: 17px;" id="blood-select-em"
+                                                        class="field-select" width="40" required>
+                                                        <option value="">Alegeți grupa de sânge</option>
+                                                        <option value="0+">0+</option>
+                                                        <option value="0-">0-</option>
+                                                        <option value="A+">A+</option>
+                                                        <option value="A-">A-</option>
+                                                        <option value="B+">B+</option>
+                                                        <option value="B-">B-</option>
+                                                        <option value="AB+">AB+</option>
+                                                        <option value="AB-">AB-</option>
+                                                    </select>
+                                                </li>
+                                                <li>
+                                                    <label style="margin-top: 15px;" class="label-tag">Descriere</label>
+                                                    <textarea id="desc" style="font-size: 18px;" name="field5"
+                                                        maxlength="90" id="field5" class="field-long field-textarea"
+                                                        required></textarea>
+                                                </li>
+                                            </ul>
+                                        </form>
+                                        <button class="button-btn-e button1-btn-e" onclick="addEmergency()"
+                                            style="width: 150px; height: 50px; margin-right: 20px;">
+                                            <h4 style="margin-top: 5px;">Adăugare</h4>
+                                        </button>
+                                        <button onclick="cancelEmergency()" style="width: 150px; height: 50px;"
+                                            class="button-btn-e button1-btn-e">
+                                            <h4 style="margin-top: 5px;">Renunță</h4>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="About" class="tabcontent-em">
+                        <div class="content-special-happy" id="happyInfos">
+                            <div class="row">
+                                <button type="button" class="btn" onclick="backHappyCase()"
+                                    style="color: rgb(0, 204, 102); font-size: 25px;">Adaugă Cazuri Reușite</button>
+                                <h3 style="margin-top: 10px; margin-left: 22%;">Tabelă Cazuri Reușite</h3>
+                            </div>
+                            <div style="height:600px;overflow:auto; width: 100%;">
+                                <table class="content-table-happy" id="myTable-happy"
+                                    style="font-size: 22px;margin-left: 0px;">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align:center">Persoana</th>
+                                            <th style="text-align:center">Despre caz</th>
+                                            <th style="text-align: center">Părerea persoanei</th>
+                                            <th style=" text-align:center">Editează</th>
+                                            <th style="text-align:center">Șterge</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="table-body-happy">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div style="position: absolute;
+                        z-index: 2;" class="card-em-em" id="happyForm">
+                            <div id="cardContent-em-em" class="container-em-em">
+                                <p
+                                    style="color:black; text-align: center; text-transform: initial; font-size: 18px; margin-left : 5px;margin-right : 5px;margin-top: 5px;">
+                                    Vă rugăm
+                                    introduceți informații despre acei pacienți, care au avut nevoie de sânge, au fost
+                                    ajutați prin intermediul acestor aplicații și vor să împărtășească experiența
+                                    lor cu
+                                    donatorii.
+                                    Dacă persoanele respective doresc să rămână anonime, scrieți în căsuța
+                                    pacientului:
+                                    Anonim.<br>
+                                    Vă mulțumim!</p>
+                                <div class="modal-content-em-em animate-em">
+                                    <div class="container-em-em">
+                                        <div class="container-em-second">
+                                            <form style="margin-top: 0px;">
+                                                <div class="row">
+                                                    <div>
+                                                        <label style="color: black;font-size: 18px; margin-left: 40px;"
+                                                            for="fname">Pacient</label>
+                                                    </div>
+                                                    <div style="margin-left: 26px;text-transform: capitalize">
+                                                        <input type="text" id="numePacient"
+                                                            style="outline-color: rgb(0, 204, 102);"
+                                                            placeholder="Nume Complet sau Anonim...">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div>
+                                                        <label
+                                                            style="color: black;font-size: 18px; margin-left: 40px; text-transform: initial;"
+                                                            for="subject">Descrierea<br> cazului</label>
+                                                    </div>
+                                                    <div>
+                                                        <textarea id="cazPacient" name="subject"
+                                                            placeholder="Descrieți pe scurt cazul pacientului..."
+                                                            style="height:150px; margin-top: 10px;"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div>
+                                                        <label
+                                                            style="color: black;font-size: 18px;margin-left: 40px; text-transform: initial;"
+                                                            for="subject">Părerea<br>pacientului</label>
+                                                    </div>
+                                                    <div>
+                                                        <textarea id="parerePacient" name="subject"
+                                                            placeholder="Ce spune pacientul despre experiența lui? Crede că este important ca oamenii să se mobilizeze și să doneze sânge?..."
+                                                            style="height:150px;"></textarea>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <div class="row">
+                                                <button class="button-btn-em button1-btn-em" onclick="addCazReusit()"
+                                                    style=" width: 200px; height: 50px; margin-left: 160px; margin-right: 20px;">
+                                                    <h4 style="margin-top: 5px;">Adăugare</h4>
+                                                </button>
+                                                <button onclick="cancelCazReusit()" style="width: 200px; height: 50px;"
+                                                    class="button-btn-em button1-btn-em">
+                                                    <h4 style="margin-top: 5px;">Renunță</h4>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="btn-group-safe">
+                                    <button type="button" class="btn" onclick="loadHappyCases()"
+                                        style="color: white; font-size: 25px;">Vizualizează
+                                        cazuri reușite</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Contact" class="tabcontent-em">
+                        <div class="content-special" id="specialCaseTabel">
+                            <div class="row">
+                                <button type="button" class="btn" onclick="backSpecialCase()"
+                                    style="color: rgb(221, 172, 94); font-size: 25px; margin-left: 15px;">Adaugă Cazuri
+                                    Speciale</button>
+                                <h3 style="margin-top: 5px; margin-left: 22%;">Tabelă Cazuri Speciale</h3>
+                            </div>
+                            <div style="height:600px;overflow:auto;">
+                                <table class=" content-table" id="myTable-Special" style="font-size: 20px;">
+                                    <thead>
+                                        <tr>
+                                            <th style="text-align:center">Nume Complet</th>
+                                            <th style="text-align:center"> Grupa de sânge</th>
+                                            <th style="text-align:center"> Telefon </th>
+                                            <th style="text-align:center">Nr. rezervări</th>
+                                            <th style="text-align:center">Descriere</th>
+                                            <th style="text-align:center">Poza</th>
+                                            <th style="text-align:center">Editează</th>
+                                            <th style="text-align:center">Șterge</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="table-body">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div style="position: absolute;
+                        z-index: 2;" class="card-cases" id="formSpecialCase">
+                            <div id="cardContent-em-em" class="container-cases">
+                                <div class="btn-group-special">
+                                    <button type="button" class="btn" onclick="loadSpecialCases()"
+                                        style="color: white; font-size: 25px;">Vizualizează
+                                        Cazuri Speciale</button>
+                                </div>
+                                <p
+                                    style="color:black; text-align: center;margin-left: 10px;margin-right: 10px; text-transform: initial; font-size: 20px;">
+                                    Vă rugăm
+                                    introduceți informații despre persoane ale căror cazuri sunt relevante de afișat
+                                    în
+                                    aplicația de mobil - donatorilor.
+                                    Vă mulțumim!</p>
+                                <div class="modal-content-cases animate-cases">
+                                    <div class="container-cases">
+                                        <div class="container-cases-second">
+                                            <div class="row">
+                                                <div>
+                                                    <label style="color: black;font-size: 18px; margin-left: 40px;"
+                                                        for="fname">Persoana</label>
+                                                </div>
+                                                <div style="margin-left: 10px;text-transform: capitalize">
+                                                    <input style="outline-color: rgb(221, 172, 94);" type="text"
+                                                        id="persoana" placeholder="Nume Complet...">
+                                                </div>
+                                            </div>
+
+                                            <div class="row" style="margin-top: 15px;">
+                                                <label style="color: black;font-size: 18px; margin-left: 40px;"
+                                                    for="fname">Grupa de<br>
+                                                    sânge</label>
+                                                <select
+                                                    style="background: rgb(221, 172, 94);font-size: 18px;margin-left: 11px;"
+                                                    id="blood-special" width="40" required>
+                                                    <option value="">Alegeți grupa de sânge</option>
+                                                    <option value="0+">0+</option>
+                                                    <option value="0-">0-</option>
+                                                    <option value="A+">A+</option>
+                                                    <option value="A-">A-</option>
+                                                    <option value="B+">B+</option>
+                                                    <option value="B-">B-</option>
+                                                    <option value="AB+">AB+</option>
+                                                    <option value="AB-">AB-</option>
+                                                </select>
+                                            </div>
+                                            <div class="row" style="margin-top: 15px;">
+                                                <label
+                                                    style="color: black;font-size: 18px; margin-left: 40px;margin-top: 10px;"
+                                                    for="fname">Telefon</label>
+                                                <input type="tel"
+                                                    style="color: black;font-size: 18px;margin-left: 31px; width: 499px; height: 50px;outline-color: rgb(221, 172, 94);"
+                                                    id="telSpecial" placeholder="Telefon e.g: +40 749 309 413">
+                                            </div>
+                                            <div class="row">
+                                                <div>
+                                                    <label
+                                                        style="color: black;font-size: 18px; margin-left: 40px; text-transform: initial;"
+                                                        for="subject">Descrierea<br> cazului</label>
+                                                </div>
+                                                <div>
+                                                    <textarea id="descPersoana" name="subject"
+                                                        placeholder="Descrieți pe scurt cazul persoanei..."
+                                                        style="height:100px; margin-top: 10px; font-size: 18px"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <label style="color: black;font-size: 18px; margin-left: 40px;"
+                                                    for="fname">Poză</label>
+                                                <input type="file"
+                                                    style="color: black;font-size: 18px;margin-left: 45px; width: 500px; height: 50px;"
+                                                    id="photo" placeholder="Alegeți poză...">
+                                            </div>
+                                            <div class="row" style="margin-top: 30px">
+                                                <button class="button-btn-cases button1-btn-cases"
+                                                    onclick="uploadPhoto()"
+                                                    style=" width: 200px; height: 50px; margin-left: 160px; margin-right: 20px;">
+                                                    <h4 style="margin-top: 5px;">Adăugare</h4>
+                                                </button>
+                                                <button onclick="cancelSpecial()" style="width: 200px; height: 50px;"
+                                                    class="button-btn-cases button1-btn-cases">
+                                                    <h4 style="margin-top: 5px;">Renunță</h4>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>​
+                    </div>
+                </div>
+        </section>
+
+        <hr class="m-0">
+
+        <section class="resume-section p-3  justify-content-center" id="statistic">
+            <div class="w-100">
+                <h2 class="mb-5">Statistici</h2>
+                <div class="tab">
+                    <button style="width: 497px;" class="tablinks" onclick="openChart(event, 'tara')"
+                        id="defaultOpen">Total Persoane
+                        Țară 2020</button>
+                    <button style="width: 498px;" class="tablinks" onclick="openChart(event, 'judet')">Statistici Sexe
+                        Țară 2020 </button>
+                    <button style="width: 501px;" class="tablinks" onclick="openChart(event, 'sex')">Statistici Sexe
+                        Județ 2020</button>
+                </div>
+                <div id="tara" style="margin-left: 60px; margin-top:10px;" class="size tabcontent" width="500"
+                    height="400">
+                    <canvas style="margin-left: 180px;" id="myChartPolar" width="170" height="132"></canvas>
+                    <!-- <script language="javascript ">
+                        loadPolarArea();
+                    </script> -->
+                </div>
+                <div id="judet" class="tabcontent size-bar">
+                    <canvas class="canvas-size" style="margin-left: 60px; margin-top:50px;" id="myBarChart"></canvas>
+                </div>
+                <div id="sex" class="tabcontent size-horizontal">
+                    <canvas class="canvas-size" style="margin-left: 100px; margin-top:50px;"
+                        id="myStackedLine"></canvas>
+                </div>
+            </div>
+
+        </section>
+
+        <hr class="m-0">
+
+        <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="infos">
+            <div class="w-100">
+                <h2 class="mb-5">Centru</h2>
+
+                <button class="tablink-info" id="defaultOpenInfo"
+                    onclick="openPageInfo('Data', this, 'rgb(175, 76, 101)')">Date centru</button>
+
+                <div id="Data" class="tabcontent-info">
+                    <div class="card-info">
+                        <!-- edit form column -->
+                        <div class="col-md-9 personal-info">
+                            <form class="form-horizontal" role="form">
+                                <div style="color: black;" class="form-group">
+                                    <div class="col-md-6">
+                                        <label
+                                            style="font-size: 20px; color: black;margin-top: 25px;margin-right: 100px;">Centru</label>
+                                    </div>
+                                    <div style="margin-left: 10px;" class="col-lg-8">
+                                        <input style="font-size: 18px;" class="form-control" readonly id="centruId"
+                                            type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label style="font-size: 20px;color: black;margin-right: 100px;">Județ</label>
+                                    </div>
+                                    <div style="margin-left: 10px;" class="col-lg-8">
+                                        <input style="font-size: 18px;" class="form-control" readonly id="judetUpdate"
+                                            type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label style="font-size: 20px;color: black;margin-right: 100px;">Adresa</label>
+                                    </div>
+                                    <div style="margin-left: 10px;" class="col-lg-8">
+                                        <input style="font-size: 18px;" class="form-control" readonly id="address"
+                                            type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label style="font-size: 20px;color: black;margin-right: 100px;">E-mail</label>
+                                    </div>
+                                    <div style="margin-left: 10px;" class="col-lg-8">
+                                        <input style="font-size: 18px;" class="form-control" readonly type="text"
+                                            id="emailUpdate">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <label style="font-size: 20px;color: black;margin-right: 100px;">Telefon</label>
+                                    </div>
+                                    <div style="margin-left: 10px;" class="col-lg-8">
+                                        <input style="font-size: 18px;" id="tel1" class="form-control" type="tel">
+                                    </div>
+                                    <div style="margin-left: 10px;margin-top: 15px;" class="col-lg-8">
+                                        <input style="font-size: 18px;" id="tel2" class="form-control" type="tel">
+                                    </div>
+                                </div>
+                                <div style="color: black;margin-top: 18px;" class="form-group">
+                                    <div style="margin-left: 150px;margin-top:30px;" class="col-md-8">
+                                        <input type="button" style="font-size: 17px;" onclick="updateInfo()"
+                                            class="btn btn-primary" value="Salvează modificări">
+                                        <span></span>
+                                        <input type="reset" style="font-size: 17px;" onclick="cancelUpdateInfo()"
+                                            class="btn btn-default" value="Renunță">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="m-0">
+
+        <section class="resume-section justify-content-center" id="logout">
+            <div class="back-image">
+                <p
+                    style="font-family: 'Courier New', Courier, monospace; text-align: center; font-size: 200px; color: rgb(135, 59, 78); margin-top:50px;">
+                    Thank
+                    you</p>
+                <p
+                    style="margin-top:100px;font-family: 'Michroma'; margin-left: 67%; font-size: 40px; color: rgb(135, 59, 78)">
+                    Donate your Love</p>
+                <p style="font-family: 'Michroma'; margin-left: 77%; font-size: 40px; color: rgb(135, 59, 78)">
+                    Save Lives</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyA0IZXZxVA25U_ShIz86pw4TfC8T2KCL1k",
+            authDomain: "allinone-project-9cbfc.firebaseapp.com",
+            databaseURL: "https://allinone-project-9cbfc.firebaseio.com",
+            projectId: "allinone-project-9cbfc",
+            storageBucket: "allinone-project-9cbfc.appspot.com",
+            messagingSenderId: "191664374311",
+            appId: "1:191664374311:web:7a2a2b4fbeab4fc727c402",
+            measurementId: "G-69Y54DY0KJ "
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        //firebase.analytics();
+        const db = firebase.firestore();
+        //db.settings({ timestampsInSnapshots: true });
+    </script>
+
+    <script src="js/managehappy.js"></script>
+    <script src="js/manageurg.js"></script>
+    <script src="js/management.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/emergency.js"></script>
+    <script src="js/info.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/resume.min.js"></script>
+    <script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src=" https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- <script src=" https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js "></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script> -->
+
+    <script>
+        $(function () {
+            $("#datepicker").datepicker({
+                dateFormat: 'dd_mm_yy',
+                defaultDate: new Date(),
+                onSelect: function () {
+                    var selectedItem = $(this).val();
+                    console.log(selectedItem);
+                    bookingInfo(selectedItem);
+                }
+            });
+            $("#datepicker").datepicker('setDate', new Date());
+            //$(" #datepicker ").datepicker(" show ");
+        });
+    </script>
+
+    <div style="text-align:left" id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content-edit">
+            <div class="modal-header">
+                <span style="float: right;" class="close2">&times;</span>
+                <h3 style="color:  white; float: left;">Programare</h3>
+            </div>
+            <div class="modal-body">
+                <h4 style="font-family: Arial; text-transform: capitalize;">Nume Prenume:
+                    <h3 style="font-family: Arial; text-transform: capitalize;" id="editName">
+                    </h3>
+                </h4>
+                <h4 style="font-family: Arial; text-transform: capitalize;">Telefon:
+                    <h3 style="font-family: Arial; text-transform: lowercase;" id="editTelefon">
+                    </h3>
+                </h4>
+                <h4 style="font-family: Arial; text-transform: uppercase;">E-mail:
+                    <h3 style="font-family: Arial; text-transform: lowercase;" id="editEmail">
+                    </h3>
+                </h4>
+                <h4 style="font-family: Arial; text-transform: capitalize;">Grupa de sânge:
+                    <h3 style="font-family: Arial; text-transform: uppercase;" id="editBlood">
+                    </h3>
+                </h4><br>
+                <button style="font-family: Arial;" onclick="cancelBooking()" style="outline-color: white;"
+                    class="button">Anulează</button><br><br>
+            </div>
+            <div class="modal-footer">
+                <h3 style="color:  white;">Programare</h3>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align:left" id="insertBooking" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span style="float: left;" class="close3">&times;</span>
+                <h3 style="color:  white;">Programare</h3>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <h3>Nume Prenume:</h3>
+                    <input
+                        style="font-size:25px; width:300px; height:40px; margin-bottom: 2%;outline-color: rgb(234, 160, 185);"
+                        type="email" id="insertName" name="fnameVal" required><br>
+                    <!--<li class="rq">* Introduceți doar litere.</li>-->
+                    <h3>Telefon:</h3>
+                    <input style="font-size:25px; width:300px; height:40px;outline-color: rgb(234, 160, 185);"
+                        type="tel" placeholder="+40 749 309 413" id="insertTelefon" name="lname" required><br><br>
+                    <h3>E-mail:</h3>
+                    <input
+                        style="font-size:25px; width:300px; height:40px; margin-bottom: 2%;outline-color: rgb(234, 160, 185);"
+                        type="email" id="insertEmail" name="femail" required><br>
+                    <h3>Grupa de sânge:</h3>
+                    <select
+                        style="font-size:22px; width:300px; height:50px; margin-bottom: 2%;outline-color: rgb(234, 160, 185);"
+                        id="blood-select" required>
+                        <option value="">Alegeți grupa de sânge</option>
+                        <option value="g1">0+</option>
+                        <option value="g2">0-</option>
+                        <option value="g3">A+</option>
+                        <option value="g4">A-</option>
+                        <option value="g5">B+</option>
+                        <option value="g6">B-</option>
+                        <option value="g7">AB+</option>
+                        <option value="g8">AB-</option>
+                    </select>
+                </form>
+                <br>
+                <button onclick="saveBooking()" style="outline-color: white;" class="button">Salvează
+                    programare</button><br><br>
+            </div>
+            <div class="modal-footer">
+                <h3 style="color:  white;">Programare</h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModalOut" class="modal-out">
+        <!-- Modal content -->
+        <div class="modal-out-content">
+            <div class="modal-out-header">
+                <span class="close-out">&times;</span>
+                <h3 style="color: white">Ieșire</h3>
+            </div>
+            <div class="modal-out-body">
+                <h4 style="font-family: Arial; text-transform: initial;">Sigur doriți să vă deconectați?</h4>
+                <button
+                    style="margin-top: 5%; margin-left: 15%; background-color: #984360; color: white; font-size: 20px;"
+                    onclick="logout2()">
+                    Da, vreau să mă
+                    deconectez.</button>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align:left" id="myFormUpdateEmergency" class="modal">
+        <div style="width: 700px; height: 500px;margin-left: 37%; margin-top: 0%" class="modal-content-em animate-em">
+            <div class="container-em">
+                <form style="margin-bottom: 0px;">
+                    <ul class="form-style-1">
+                        <label class="label-tag">Titlu urgență</label>
+                        <input type="text" style="font-size: 18px;" id="titluUrg" class="field-long" maxlength="49"
+                            required />
+                        </li>
+                        <li>
+                            <label style="margin-top: 15px;" class="label-tag">Grupa de
+                                sânge</label>
+                            <select style="font-size: 22px;" id="blood-select-urg" class="field-select" width="40"
+                                required>
+                                <option value="">Alegeți grupa de sânge</option>
+                                <option value="0+">0+</option>
+                                <option value="0-">0-</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label style="margin-top: 15px;" class="label-tag">Descriere</label>
+                            <textarea style="font-size: 18px;" name="field5" maxlength="90" id="descUrg"
+                                class="field-long field-textarea" required></textarea>
+                        </li>
+                    </ul>
+                </form>
+                <button class="button-btn-e button1-btn-e" onclick="updateEmergency()"
+                    style="width: 150px; height: 50px; margin-right: 20px;margin-left: 200px;">
+                    <h4 style="margin-top: 5px;">Actualizare</h4>
+                </button>
+                <button onclick="closeEmergency()" style="width: 150px; height: 50px;outline-color: none;"
+                    class="button-btn-e button1-btn-e">
+                    <h4 style="margin-top: 5px;">Renunță</h4>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align:left" id="myFormUpdateHappy" class="modal">
+        <div style="width: 700px; height: 534px;margin-left: 37%; margin-top: 0%"
+            class="modal-content-em-em animate-em">
+            <div class="container-em-em">
+                <div class="container-em-second">
+                    <form style="margin-top: 0px;">
+                        <div class="row">
+                            <div>
+                                <label style="color: black;font-size: 18px; margin-left: 40px;"
+                                    for="fname">Pacient</label>
+                            </div>
+                            <div style="margin-left: 26px;text-transform: capitalize">
+                                <input style="outline-color: rgb(0, 204, 102);" type="text" id="updatePacient"
+                                    placeholder="Nume Complet sau Anonim...">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div>
+                                <label style="color: black;font-size: 18px; margin-left: 40px; text-transform: initial;"
+                                    for="subject">Descrierea<br> cazului</label>
+                            </div>
+                            <div>
+                                <textarea id="updateCaz" name="subject"
+                                    placeholder="Descrieți pe scurt cazul pacientului..."
+                                    style="height:150px; margin-top: 10px;"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div>
+                                <label style="color: black;font-size: 18px;margin-left: 40px; text-transform: initial;"
+                                    for="subject">Părerea<br>pacientului</label>
+                            </div>
+                            <div>
+                                <textarea id="updateOpinie" name="subject"
+                                    placeholder="Ce spune pacientul despre experiența lui? Crede că este important ca oamenii să se mobilizeze și să doneze sânge?..."
+                                    style="height:150px"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <button class="button-btn-em button1-btn-em" onclick="editHappyCase()"
+                            style=" width: 200px; height: 50px; margin-left: 160px; margin-right: 20px;">
+                            <h4 style="margin-top: 5px;">Actualizare</h4>
+                        </button>
+                        <button onclick="cancelHappyCase()" style="width: 200px; height: 50px;"
+                            class="button-btn-em button1-btn-em">
+                            <h4 style="margin-top: 5px;">Renunță</h4>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align:left" id="myUpdateSpecialForm" class="modal">
+        <div style="width: 700px; height: 548px;margin-left: 37%; margin-top: 0%"
+            class="modal-content-cases animate-cases">
+            <div class="container-cases">
+                <div class="container-cases-second">
+                    <div class="row">
+                        <div>
+                            <label style="color: black;font-size: 18px; margin-left: 40px;" for="fname">Persoana</label>
+                        </div>
+                        <div style="margin-left: 10px;text-transform: capitalize">
+                            <input style="outline-color: rgb(221, 172, 94);" style="font-size: 18px;" type="text"
+                                id="persoanaSpecialUpdate" placeholder="Nume Complet...">
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top: 15px;">
+                        <label style="color: black;font-size: 18px; margin-left: 40px;" for="fname">Grupa de<br>
+                            sânge</label>
+                        <select style="background: rgb(221, 172, 94);font-size: 18px;margin-left: 11px;"
+                            id="blood-special-updateForm" width="40" required>
+                            <option value="">Alegeți grupa de sânge</option>
+                            <option value="0+">0+</option>
+                            <option value="0-">0-</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                    </div>
+                    <div class="row" style="margin-top: 15px;">
+                        <label style="color: black;font-size: 18px; margin-left: 40px;margin-top: 10px;"
+                            for="fname">Telefon</label>
+                        <input type="tel"
+                            style="color: black;font-size: 18px;margin-left: 31px; width: 499px; height: 50px;outline-color: rgb(221, 172, 94);"
+                            id="tel-update-special" placeholder="Telefon e.g: +40 749 309 413">
+                    </div>
+                    <div class="row">
+                        <div>
+                            <label style="color: black;font-size: 18px; margin-left: 40px; text-transform: initial;"
+                                for="subject">Descrierea<br> cazului</label>
+                        </div>
+                        <div>
+                            <textarea id="desc-update-special" name="subject"
+                                placeholder="Descrieți pe scurt cazul persoanei..."
+                                style="height:100px; margin-top: 10px; font-size: 18px"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label style="color: black;font-size: 18px; margin-left: 40px;" for="fname">Poza
+                            nouă</label>
+                        <input type="file"
+                            style="color: black;font-size: 18px;margin-left: 0px; width: 500px; height: 50px;"
+                            id="photo-special-update">
+                    </div>
+                    <div class="row" style="margin-top: 30px">
+                        <button class="button-btn-cases button1-btn-cases" onclick="updateSpecialCase()"
+                            style=" width: 200px; height: 50px; margin-left: 160px; margin-right: 20px;">
+                            <h4 style="margin-top: 5px;">Actualizare</h4>
+                        </button>
+                        <button onclick="cancelSpecialCase()" style="width: 200px; height: 50px;"
+                            class="button-btn-cases button1-btn-cases">
+                            <h4 style="margin-top: 5px;">Renunță</h4>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

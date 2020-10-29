@@ -1,0 +1,57 @@
+
+/* Style tab links */
+.tablink-info {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 20px;
+    width: 1600px;
+  }
+  
+  .tablink-info:hover {
+    background-color: #777;
+  }
+  
+  /* Style the tab content (and add height:100% for full page content) */
+  .tabcontent-info {
+    color: white;
+    display: none;
+    height: 850px;
+    width: 1600px;
+    padding: 100px 20px;
+  }
+  
+  #Data {background-image: url('D:/LICENTA/WebApp/images/hospital.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: rgba(255,255,255,0.5); 
+    background-size: cover;}
+  #News {background-image: url('D:/LICENTA/WebApp/images/laptop.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: rgba(255,255,255,0.5); 
+    background-size: cover;}
+
+ .card-info {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 610px;
+        margin: auto;
+        height: 680px;
+        margin-top: 30px;
+        margin-right: 450px;
+        background-color: white;
+        text-align: center;
+        font-family: arial;
+}
+
+label-size{
+    font-size: 15px;
+}
+
+div-info {
+    display: inline-block;
+}

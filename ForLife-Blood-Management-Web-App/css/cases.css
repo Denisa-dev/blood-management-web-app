@@ -1,0 +1,112 @@
+.card-cases {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    height: 700px;
+    background-color: white;
+    width: 900px;
+    position: relative;
+    margin-left: 390px;
+    transition: 0.5s;
+}
+.container-cases {
+    display: table;
+    font-size: 70px;
+    color: white;
+    width: 100%;
+    height: 810px;
+}
+
+  
+  /* Style the tab content (and add height:100% for full page content) */
+  .tabcontent-info-sp {
+    color: white;
+    display: none;
+    height: 700px;
+    margin-left: 0%;
+    width: 1700px;
+    padding: 100px 20px;
+  }
+
+.tablink-info-sp {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    margin-left: 0%;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 20px;
+    width: 1700px;
+  }
+  
+  .tablink-info-sp:hover {
+    background-color: #777;
+  }
+
+.modal-content-cases{
+    background-color: #fefefe;
+    margin: 0% auto 0% auto;
+    /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid rgb(221, 172, 94);
+    width: 80%;
+    height: 58%;
+    /* Could be more or less, depending on screen size */
+}
+
+.animate-cases {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+.container-cases-second {
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    height: 545px;
+    margin-top: 1px;
+    width: 100%;
+  }
+
+  button-btn-cases {
+    background-color: rgb(221, 172, 94); /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    outline:none !important; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+  
+.button1-btn-cases {
+    background-color: white; 
+    color: white; 
+    outline:none !important; 
+    border: 2px solid rgb(221, 172, 94);
+}
+  
+.button1-btn-cases:hover {
+    background-color: rgb(221, 172, 94);
+    color: white;
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}

@@ -1,0 +1,277 @@
+.content-special{
+    background: #fff;
+    width: 1600px;
+    margin: 15px auto;
+    padding:  15px 30px;
+    margin-left: 2%;
+    height: 700px;
+    border-radius: 10px 120px 10px 10px;
+    box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  width: 1525px;
+  margin-left: 1%;
+  display:block;
+  color: black;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: rgb(221, 172, 94);
+  color: #ffffff;
+  text-align: left;  
+  width: 870px;  
+  font-weight: bold;
+}
+
+ 
+.content-table th,
+.content-table td {
+  width: 870px;
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid rgb(221, 172, 94)
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: rgb(221, 172, 94)
+}
+
+button-case{
+  border: 0;
+  background: rgb(221, 172, 94);
+  border-radius: 10px;
+  padding: 13px;
+  width: 14%;
+  cursor: pointer;
+  box-shadow: -1px 0px 1px rgba(0,0,0,0.1);
+  font-weight: bold;
+  font-family: ubuntu;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.content-special-urg{
+  background: #fff;
+  max-width: 1500px;  
+  left: 0;
+  height: 680px;
+  right: 0;  
+  margin-top: 1%;
+  margin-left: 5%;
+  margin-right: auto;
+  border-radius: 10px 120px 10px 10px;
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+  position: relative;
+}
+.content-table-urg {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  width: 1400px;
+  margin-left: 1%;
+  display:block;
+  overflow:auto;
+  color: black;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table-urg thead tr {
+  background-color: #ff3c3c;
+  color: #ffffff;
+  text-align: left;  
+  width: 950px;  
+  font-weight: bold;
+}
+
+.content-table-urg th,
+.content-table-urg td {
+  width: 870px;
+  padding: 12px 15px;
+}
+
+.content-table-urg tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table-urg tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table-urg tbody tr:last-of-type {
+  border-bottom: 2px solid #ff3c3c;
+}
+
+.content-table-urg tbody tr.active-row {
+  font-weight: bold;
+  color: #ff3c3c;
+}
+
+
+button-case-urg{
+  border: 0;
+  background: #ff3c3c;
+  border-radius: 10px;
+  padding: 13px;
+  width: 14%;
+  cursor: pointer;
+  box-shadow: -1px 0px 1px rgba(0,0,0,0.1);
+  font-weight: bold;
+  font-family: ubuntu;
+  letter-spacing: 1px;
+  color: white;
+}
+
+
+.btn-group-safe {
+  background-color: rgb(0, 204, 102); /* Green background */
+  border: 1px solid rgb(0, 204, 102);/* Green border */
+  color: white; /* White text */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 100%; /* Set a width if needed */
+  height: 6%;   
+  margin-top: 10px;
+  float: right;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.btn-group-safe :not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group-safe :hover {
+  background-color: rgb(26, 157, 92);
+  color: white;
+}
+
+.content-special-happy{
+  background: #fff;
+  max-width: 1500px;
+  margin: 30px auto;
+  margin-left: 5%;
+  padding:  20px 30px;
+  border-radius: 10px 120px 10px 10px;
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.content-table-happy {
+border-collapse: collapse;
+margin: 25px 0;
+font-size: 0.9em;
+width: 1420px;
+display:block;
+color: black;
+border-radius: 5px 5px 0 0;
+overflow: hidden;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table-happy thead tr {
+background-color: rgb(0, 204, 102);
+color: #ffffff;
+text-align: left;  
+width: 870px;  
+font-weight: bold;
+}
+
+
+.content-table-happy th,
+.content-table-happy td {
+width: 870px;
+padding: 12px 15px;
+}
+
+.content-table-happy tbody tr {
+border-bottom: 1px solid #dddddd;
+}
+
+.content-table-happy tbody tr:nth-of-type(even) {
+background-color: #f3f3f3;
+}
+
+.content-table-happy tbody tr:last-of-type {
+border-bottom: 2px solid rgb(0, 204, 102);
+}
+
+.content-table-happy tbody tr.active-row {
+font-weight: bold;
+color: rgb(0, 204, 102);
+}
+
+button-happy{
+border: 0;
+background: rgb(0, 204, 102);
+border-radius: 10px;
+padding: 13px;
+width: 14%;
+cursor: pointer;
+box-shadow: -1px 0px 1px rgba(0,0,0,0.1);
+font-weight: bold;
+font-family: ubuntu;
+letter-spacing: 1px;
+color: white;
+}
+  
+
+.btn-group-special {
+  background-color: rgb(255, 204, 102);
+  border: 1px solid rgb(255, 204, 102);
+  color: white; /* White text */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 100%; /* Set a width if needed */
+  height: 6%;   
+  margin-bottom: 10px;
+  float: right;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.btn-group-special :not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group-special :hover {
+  background-color: rgb(221, 172, 94);
+  color: white;
+}
+
+.btn-hover-em :hover{
+  background-color: #ff3c3c;
+  color: white;
+}
+
+.btn-hover-happy :hover{
+  background-color: rgb(0, 204, 102);
+  color: white;
+}
+
+.btn-hover-special :hover{
+  background-color: rgb(221, 172, 94);
+  color: white;
+}

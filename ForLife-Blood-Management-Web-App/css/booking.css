@@ -1,0 +1,202 @@
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+body {
+    font-family: Verdana, sans-serif;
+}
+
+.left-half {
+    left: 300px;
+    margin-top: 8%;
+    width: 50%;
+    height: 100%;
+}
+
+.right-half {
+    background-image: url('D:/LICENTA/WebApp/images/handy.png');
+    background-size: cover;
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    width: 50%;
+}
+
+.div1 {
+    clear: both;
+}
+
+.div2 {
+    clear: both;
+    width: 1505px;
+    bottom: 0;
+    margin-left: 10%;
+    background-color:rgb(135, 59, 78);
+}
+
+.left-half-book {
+    left: 0px;
+    height: 50%;
+}
+
+.right-half-book {
+    right: 0px;
+    width: 50%;
+}
+
+.backGround {
+    /*background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(112, 9, 45, 1) 46%, rgba(112, 9, 45, 1) 100%);*/
+    background-image: url('D:/LICENTA/WebApp/images/flof.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.divider {
+    flex-grow: 1;
+    border-bottom: 1px solid black;
+    margin: 1px
+}
+
+.ui-datepicker-calendar a {
+    color: white !important;
+    border-block-start-color: #1abc9c;
+    background-color: rgb(79, 119, 121) !important;
+}
+
+.text {
+    font-size: 30px;
+    font-family: 'Michroma';
+    color: rgb(135, 59, 78);
+}
+
+
+
+.month {
+    background: rgb(135, 59, 78);
+    text-align: center;
+    width: 1500px;
+    margin-left: 10%;
+}
+
+.large {
+    width: 500px;
+    height: 30px;
+    margin-top: 0px;
+    background: rgb(135, 59, 78);
+    text-align: center;
+}
+
+.datepicker {
+    background: rgb(135, 59, 78);
+    border-color: rgb(248, 248, 248);
+    color: white;
+    text-align: center;
+}
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+}
+
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.rq {
+    color: #FF0000;
+    font-size: 13pt;
+    margin-left: 0%;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #777;
+}
+
+.days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+}
+
+
+/* Add media queries for smaller screens */
+
+@media screen and (max-width:720px) {
+    .weekdays li,
+    .days li {
+        width: 13.1%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .weekdays li,
+    .days li {
+        width: 12.5%;
+    }
+    .days li .active {
+        padding: 2px;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .weekdays li,
+    .days li {
+        width: 12.2%;
+    }
+}
+
+label {
+    font-family: sans-serif;
+    font-size: 1rem;
+    padding-right: 10px;
+}
+
+select {
+    font-size: .9rem;
+    padding: 2px 5px;
+    color: white;
+    background-color:#c02748;
+}

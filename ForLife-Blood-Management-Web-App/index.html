@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Pagina Start - Autentificare</title>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script src="sweetalert2.all.min.js" charset="UTF-8"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Ruthie' rel='stylesheet'>
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+        type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Michroma' rel='stylesheet'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/landing-page.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+
+</head>
+
+<body id="my-body" class="back">
+    <div class="left-half logo-text">
+        <h2 class="logo-text" style="margin-top: 12%; font-size: 90px;font-family: 'Allura'">ForLife</h2>
+        <p class="logo-text" style="margin-top: 16%; font-size: 30px;">Give Smiles</p>
+        <p class="logo-text" style="margin-top: 18%; font-size: 30px;">Donate Your Love</p>
+    </div>
+    <div style="margin-left: 2%">
+        <div class="card">
+            <div id="cardContent" class="container">
+                <h2 style="margin-top: 10px; text-align: center"> Bine ați revenit!</h2>
+                <h2 style=" text-align: center">Vă rugăm utilizați datele de conectare primite.</h2>
+                <h1 style="margin-top: 10%" class="text"><b>Autentificare</b></h1>
+                <div class="modal-content animate">
+                    <div class="container">
+                        <label style="font-size:20px" for="email"><b>Adresa Email</b></label>
+                        <input id="email_field" style="font-size:20px; outline-color: rgb(210, 136, 161);" type="text"
+                            placeholder="Introduceți email..." name="email" required>
+                        <label style="font-size:20px; margin-top: 2%" for="psw"><b>Parola</b></label>
+                        <div class="input-container">
+                            <input style="outline-color: rgb(210, 136, 161);" id="password_field" type="password"
+                                placeholder="Introduceți parola..." name="psw" required>
+                            <span id="visibility_off" class="material-icons">visibility_off</span>
+                        </div>
+                        <button id="btnLogin_div" onclick="login()"
+                            style="margin-top: 50px;outline-color: rgb(210, 136, 161);" class="button button1">
+                            <h4>Autentificare</h4>
+                        </button>
+                        <h4 style="margin-top: 40px; text-align: center">Ai uitat <a href="#" onclick="resetPassword()"
+                                style="margin-top: 30px; text-align: center">parola?</a></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyA0IZXZxVA25U_ShIz86pw4TfC8T2KCL1k",
+            authDomain: "allinone-project-9cbfc.firebaseapp.com",
+            databaseURL: "https://allinone-project-9cbfc.firebaseio.com",
+            projectId: "allinone-project-9cbfc",
+            storageBucket: "allinone-project-9cbfc.appspot.com",
+            messagingSenderId: "191664374311",
+            appId: "1:191664374311:web:7a2a2b4fbeab4fc727c402",
+            measurementId: "G-69Y54DY0KJ"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        //firebase.analytics();
+        const db = firebase.firestore();
+        const storage = firebase.storage();
+        //db.settings({ timestampsInSnapshots: true });
+    </script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/centru.js"></script>
+</body>
+
+</html>
